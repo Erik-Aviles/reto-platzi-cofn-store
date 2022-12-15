@@ -1,5 +1,7 @@
 export default {
     cart: [],
+    buyer: [],
+    orders: [],
     products: [
       {
         'id': '1',
@@ -18,7 +20,7 @@ export default {
       {
         'id': '4',
         'image': 'https://arepa.s3.amazonaws.com/pin.png',
-        'title': 'Pin',
+        'title': 'Medalla',
         'price': 4,
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       },

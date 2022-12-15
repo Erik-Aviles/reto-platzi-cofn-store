@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/icon-black.png'
 import AppContext from '../context/AppContext';
 import '../styles/Header.css';
 
@@ -7,9 +8,12 @@ function Header() {
   const { state: {cart} } = useContext(AppContext);
   return (
     <div className="Header">
-      <h1 className="Header-title">
-        <Link to='/'> Erik Conf Merch </Link>
-      </h1>
+      <div>
+        <Link to='/'> <img src={logo} alt="" width={100} /></Link>
+      </div>
+     {/*  <h1>
+        <Link className="Header-title" to='/'><span className="Header-title1">iB</span><span className="Header-title2">iS</span> </Link>
+      </h1> */}
       <div className="Header-checkout">
         { 
           cart.length > 0 && 

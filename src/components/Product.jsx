@@ -16,7 +16,7 @@ function Product ({product, handleAddToCart}){
       </div>
       <button 
         type='button'
-        onClick={handleAddToCart(product)}
+        onClick={() => handleAddToCart(product)}
       >
         Comprar</button>
         

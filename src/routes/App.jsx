@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import '../styles/App.css';
 import Home from '../container/Home';
 import Checkout from '../container/Checkout';
 import Information from '../container/Information';
@@ -8,12 +8,14 @@ import Payment from '../container/Payment';
 import Success from '../container/Success';
 import NotFound from '../container/Notfound';
 import Layout from '../components/Layout';
-import AppContext from '../context/AppContext';
 import useInicialState from '../hooks/useInicialState';
+import AppContext from '../context/AppContext';
 
 function App() {
   const inicialState = useInicialState();
+
   return (
+
     <AppContext.Provider value={inicialState}>
       <BrowserRouter>
         <Layout>
