@@ -60,13 +60,13 @@ function Payment() {
           {
             cart.length > 0 && (
               <PayPalButton
-              options={paypalOtions}
-              style={buttonStyles}
-              amount={handleSumTotal()}
-              onPaymentStart={() => console.log('Start Payment')}
-              onPaymentSuccess={data => handlePaymentSuccess(data)}
-              onPaymentError={error => console.log(error)}
-              onPaymentCancel={data => console.log(data)}
+                paypalOptions={paypalOtions}
+                buttonStyles={buttonStyles}
+                amount={handleSumTotal()}
+                onPaymentStart={() => console.log('Start Payment')}
+                onSuccess={data => handlePaymentSuccess(data)}
+                onError={error => console.log(error)}
+                onCancel={data => console.log(data)}
               />
               )
             }

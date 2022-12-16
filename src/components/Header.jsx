@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="Header">
       <div>
-        <Link to='/'> <img src={logo} alt="" width={100} /></Link>
+        <Link to='/'> <img src={logo} alt="" width={250} /></Link>
       </div>
      {/*  <h1>
         <Link className="Header-title" to='/'><span className="Header-title1">iB</span><span className="Header-title2">iS</span> </Link>
