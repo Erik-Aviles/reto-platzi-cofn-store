@@ -1,7 +1,7 @@
 {
   "name": "reto-platzi-cofn-store",
   "version": "1.0.0",
-  "description": "",
+  "description": "aplicacion de compras en linea",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,16 +10,19 @@
     "format": "prettier --write {*.js,src/**/*.{js,jsx}}",
     "lint": "eslint src/ --fix"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Erika Aviles",
+  "license": "MIT",
   "dependencies": {
     "@paypal/react-paypal-js": "^7.8.2",
+    "@react-google-maps/api": "^2.17.1",
+    "axios": "^1.2.1",
     "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.0",
     "react-paypal-button-v2": "^2.6.3",
     "react-router-dom": "^6.4.3"
   },
@@ -38,6 +41,7 @@
     "eslint-plugin-react": "^7.31.11",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "leaflet": "^1.9.3",
     "mini-css-extract-plugin": "^2.7.0",
     "style-loader": "^3.3.1",
     "stylus": "^0.59.0",
@@ -45,5 +49,13 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.11.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IngEka/reto-platzi-cofn-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IngEka/reto-platzi-cofn-store/issues"
+  },
+  "homepage": "https://github.com/IngEka/reto-platzi-cofn-store#readme"
 }

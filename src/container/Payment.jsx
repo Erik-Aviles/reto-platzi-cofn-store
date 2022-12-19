@@ -63,7 +63,7 @@ function Payment() {
                 paypalOptions={paypalOtions}
                 buttonStyles={buttonStyles}
                 amount={handleSumTotal()}
-                onPaymentStart={() => console.log('Start Payment')}
+                onStart={() => console.log('Start Payment')}
                 onSuccess={data => handlePaymentSuccess(data)}
                 onError={error => console.log(error)}
                 onCancel={data => console.log(data)}
