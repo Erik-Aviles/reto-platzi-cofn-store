@@ -4,15 +4,12 @@ import '../styles/Map.css'
 
 
 // eslint-disable-next-line react/function-component-definition
-const Map = ( {data}) => { 
+const Map = ({data}) => { 
+    // const defaultPosition =  [51.505, -0.09]
+    // const defaultPosition =  [-1.02863, -79.46352]
+    const defaultPosition =  [data.latitude, data.longitude]
 
- console.log(data) 
-
-
-
-    const defaultPosition = {lat: data.latitude, lng: data.longitude}
-
-
+console.log(defaultPosition)
   return (
     <div className='leaflet-container'>
       <MapContainer 
@@ -26,7 +23,9 @@ const Map = ( {data}) => {
         />
         <Marker 
           position={defaultPosition}
+          
         >
+          
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>

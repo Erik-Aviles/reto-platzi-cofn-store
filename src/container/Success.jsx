@@ -10,7 +10,7 @@ function Success() {
 
   console.log(buyer[0].address)
   const location = usePosiStackAddress(buyer[0].city);
-  console.log(location)
+  // console.log(location)
 
   return (
  
@@ -19,7 +19,7 @@ function Success() {
         <h2>{`${buyer.name}, Gracias por tu compra `}</h2>
         <span>Tu pedido llegara en 3 dias a tu direccion: </span>
         <div className="Success-map">
-         {location && <Map data={location} />}
+         <Map data={location}/>
         </div>
       </div>
     </div>
