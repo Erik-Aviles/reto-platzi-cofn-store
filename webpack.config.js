@@ -2,6 +2,8 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin')
+const { DefinePlugin } = require("webpack");
+require("dotenv").config("./.env");
 
 module.exports = {
   entry: './src/index.js',
@@ -64,6 +66,10 @@ module.exports = {
         }
       ]
     }),
+    new DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+      }
+    ),
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),
