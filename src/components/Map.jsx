@@ -3,11 +3,11 @@ import { MapContainer, TileLayer, Marker , Popup} from 'react-leaflet';
 import '../styles/Map.css'
 
 
-// eslint-disable-next-line react/function-component-definition
-const Map = ({data}) => { 
+
+function Map ({data}) { 
     // const defaultPosition =  [51.505, -0.09]
-    // const defaultPosition =  [-1.02863, -79.46352]
-    const defaultPosition =  [data.latitude, data.longitude]
+    const defaultPosition =  {lat: data.latitude, lng: data.longitude}
+    // const defaultPosition =  [data.latitude, data.longitude]
 
 console.log(defaultPosition)
   return (
