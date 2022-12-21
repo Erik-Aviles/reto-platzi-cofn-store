@@ -1,30 +1,65 @@
-import React, { useContext } from 'react';
+/* eslint-disable func-names */
+import React, { useContext, useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import AppContext from '../context/AppContext';
-import Map from '../components/Map';
-import usePosiStackAddress from '../hooks/usePosiStackAddress';
 import '../styles/Success.css';
 
 
-function Success() {
+function Success () {
   const { state: { buyer }} = useContext(AppContext);
 
-  console.log(buyer[0].address)
-
-
-  const location = usePosiStackAddress(buyer[0].city);
-
+  const [state, setState] = useState({
+      latitude: 0,
+      longitude: 0,
+  });
+  
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      // eslint-disable-next-line prefer-arrow-callback
+      function (position) {
+        setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        })
+      },
+      // eslint-disable-next-line prefer-arrow-callback
+      function (error){
+        console.log(error)
+      },
+      {
+        enableHighAccuracy: true
+      }
+      )
+    }, []);
+    
+    console.log(state)
 
   return (
+   <section>
+      <div className="Success">
+        <div className="Success-content">
+          <div>
+            <h2>{`${buyer[0].name}, Gracias por tu compra `}</h2> 
+            <p>Pedido enviado con exito </p>
+            <p>Tu producto llegará a la ubicacion asignada</p>
+          </div>
+        <button type='button'>
+          <Link 
+            to ='/checkout/map'
+            state={state}
+          >Ubicacion actual</Link> 
+        </button>
+        <button type='button'>
+          <Link 
+            to ='/checkout/infocontact'
+            state={state}
+          >Ubicacion del formulario</Link> 
+        </button>
  
-    <div className="Success">
-      <div className="Success-content">
-        <h2>{`${buyer[0].name}, Gracias por tu compra `}</h2>
-        <span>Tu pedido llegara en 3 dias a tu direccion: </span>
-        <div className="Success-map">
-        <Map data ={location}/> 
         </div>
       </div>
-    </div>
+
+    </section>
   )
 }
 

@@ -70,7 +70,6 @@ function Payment() {
               />
               )
             }
-           { console.log(<PayPalButton />)}
         </div>
       </div>
     </div>

@@ -10,6 +10,8 @@ import NotFound from '../container/Notfound';
 import Layout from '../components/Layout';
 import useInicialState from '../hooks/useInicialState';
 import AppContext from '../context/AppContext';
+import Map from '../components/Map';
+import InformacionContacto from '../components/InformacionContacto';
 
 function App() {
   const inicialState = useInicialState();
@@ -25,6 +27,8 @@ function App() {
             <Route path="/checkout/information" element={<Information />} />
             <Route path="/checkout/payment" element={<Payment />} />
             <Route path="/checkout/success" element={<Success />} />
+            <Route path="/checkout/map" element={<Map />} />
+            <Route path="/checkout/infocontact" element={<InformacionContacto/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
