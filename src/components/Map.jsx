@@ -2,20 +2,20 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { MapContainer, TileLayer, Marker , Popup} from 'react-leaflet';
 import '../styles/Map.css'
-// import AppContext from '../context/AppContext';
+import AppContext from '../context/AppContext';
 
 
 
 function Map () { 
     // const defaultPosition =  [51.505, -0.09]
     const [ubicacion, setUbicacion] = useState([]);
-    // const { state: {buyer}} = useContext(AppContext)
+    const { state: {buyer}} = useContext(AppContext)
 
     const Api = 'http://api.positionstack.com/v1/forward'
 
     const params = {
         access_key: 'ad6fd358a8dcfb4085b12127cc30df77',
-        query: 'Riobamba Ecuador'/* buyer[0].city */
+        query: buyer[0].city 
     }
 
     useEffect(() => {
