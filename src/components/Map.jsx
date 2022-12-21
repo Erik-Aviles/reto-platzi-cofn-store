@@ -15,7 +15,7 @@ function Map () {
 
     const params = {
         access_key: 'ad6fd358a8dcfb4085b12127cc30df77',
-        query: buyer[0].city 
+        query: `${buyer[0].city}" " ${buyer[0].country}`
     }
 
     useEffect(() => {
@@ -27,7 +27,6 @@ function Map () {
               console.log(error);
           }); 
     }, []);
-    console.log()
 
   return (
      <div className='leaflet-container'>
