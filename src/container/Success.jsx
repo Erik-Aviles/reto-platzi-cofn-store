@@ -1,27 +1,21 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import Map from '../components/Map';
-import usePosiStackAddress from '../hooks/usePosiStackAddress';
+// import usePosiStackAddress from '../hooks/usePosiStackAddress';
 import '../styles/Success.css';
 
 
 function Success() {
   const { state: { buyer }} = useContext(AppContext);
 
-  console.log(buyer[0].address)
-
-
-  const location = usePosiStackAddress(buyer[0].city);
-
-
   return (
  
     <div className="Success">
       <div className="Success-content">
-        <h2>{`${buyer[0].name}, Gracias por tu compra `}</h2>
-        <span>Tu pedido llegara en 3 dias a tu direccion: </span>
+    {/*     <h2>{`${buyer[0].name}, Gracias por tu compra `}</h2> */}
+        <span>Tu pedido llegara en 3 dias a tu direccion en el mapa </span>
         <div className="Success-map">
-        <Map data ={location}/> 
+        <Map /> 
         </div>
       </div>
     </div>
