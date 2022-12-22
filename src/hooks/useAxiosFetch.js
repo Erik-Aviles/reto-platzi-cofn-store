@@ -14,6 +14,7 @@ const useAxiosFetch = (dataAddress) => {
     }
 
 
+    const Api = process.env.API_URL
     useEffect(() => {
         let isMounted = true;
         const source = axios.CancelToken.source();
@@ -21,11 +22,12 @@ const useAxiosFetch = (dataAddress) => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get(process.env.API_URL, {params}, {
+                const response = await axios.get(Api, {params}, {
                     cancelToken: source.token
                 });
                 if (isMounted) {
-                    setData(response.data);
+                    setData(response.data.data);
+                    console.log(response.data.data)
                     setFetchError(null);
                 }
             } catch (err) {
@@ -44,9 +46,9 @@ const useAxiosFetch = (dataAddress) => {
             isMounted = false;
             source.cancel();
         }
-
+        console.log(process.env.API_URL)
         return cleanUp;
-    }, []);
+    }, [Api]);
 
     return { data, fetchError, isLoading };
 }
