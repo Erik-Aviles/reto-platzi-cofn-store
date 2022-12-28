@@ -14,22 +14,12 @@ routes.push({
 })
 
 routes.push({
-  to:'/',
-  text: 'Inicio'
-})
-
-routes.push({
-  to: '/quienes-somos',
-  text: 'Quienes Somos'
-})
-
-routes.push({
   to: '/contactos',
-  text: 'Contactenos'
+  text: 'Contactos'
 })
 routes.push({
   to: '/login',
-  text: 'Inicio de seccion'
+  text: 'Mi cuenta'
 })
 routes.push({
   to: '/checkout',
@@ -41,37 +31,63 @@ function Menu (){
   return (
     <nav className='nav'>
       <section>
-        <Link to='/'> <img src={logo} alt="" width={250} /></Link>
+        <Link to='/'> <img src={logo} alt="" width={200} /></Link>
       </section>
       <section className='nav-content-items'>
-      <ul>
-        {routes.map(route => ((
-            <li
-              key={route.to}
-            >
-              <NavLink
-                end
-                style={({ isActive }) => ({
-                  color: isActive ? 'red' : 'blue'
-               })}
-                to={route.to}
+        <ul>
+          {
+            routes.map(route => ((
+              <li
+                key={route.to}
               >
-                { 
-                  route.to === "/checkout" 
+                <NavLink
+                  end
+                  style={({ isActive }) => ({
+                    color: isActive ? 'red' : 'blue'
+                })}
+                  to={route.to}
+                >
+                  { route.to === "/checkout" 
                     ?  cart.length > 0 
                         ?
-                          <span className="Header-alert">{cart.length}<i className="fa-solid fa-cart-shopping"/> </span>
-                          :  <span className="Header-alert">0<i className="fa-solid fa-cart-shopping"/></span>
-                    : route.text
-                }
-              </NavLink>
-            </li>
-          ))
-        )}
-      </ul>
-        
+                          <span>
+                              <span className='car-cant-items'>
+                                <p>{cart.length}</p>
+                                <i className="fa-solid fa-cart-shopping"  title="Checkout"/>
+                              </span>
+                              <p>{route.text}</p>
+                          </span>
+                        :  
+                          <span>
+                            <span className='car-cant-items'>
+                              <p>0</p>
+                              <i className="fa-solid fa-cart-shopping"  title="Checkout"/>
+                            </span>
+                            <p>{route.text}</p>
+                          </span>
+                    : route.to === "/login" 
+                    ? <span>
+                        <i className="fa-solid fa-lock" title='Candadito'/>
+                        <p>{route.text}</p>
+                    </span>
+                    : route.to === "/buscar" 
+                    ? <span>
+                        <i className="fa-solid fa-magnifying-glass" title='Icono de Lupa'/>
+                        <p>{route.text}</p>
+                        </span>
+                    : <span>
+                        <i className="fa-brands fa-whatsapp" title='Icono de telefono'/>
+                        <p>{route.text}</p>
+                      </span>
+
+                  }
+                   
+                </NavLink>
+              </li>
+            )))
+          }
+        </ul>
       </section>
-     
     </nav>
   )
 }
@@ -86,7 +102,20 @@ function Menu (){
 // <Link to="/checkout">
 // <i className="fa-solid fa-cart-shopping"/>
 // </Link>
+// <i class="fa-regular fa-user"></i> 
 // </div> */}
+
+/*  { route.to === "/checkout" 
+                      ?  cart.length > 0 
+                          ?
+                            <span className="Header-alert">{cart.length}<i className="fa-solid fa-cart-shopping"  title="Checkout"/> </span>
+                            :  <span className="Header-alert">0<i className="fa-solid fa-cart-shopping"  title="Checkout"/></span>
+                      : route.to === "/login" 
+                      ? <i className="fa-regular fa-user"/>
+                      : route.to === "/buscar" 
+                      ? <i className="fa-solid fa-magnifying-glass"/>
+                      : route.text
+                  } */
 
 
 export default Menu

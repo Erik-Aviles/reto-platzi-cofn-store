@@ -2,13 +2,38 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: end;
 }
 
 .nav ul{
+    height: 50px;
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
     display: flex;
-    gap: 10px;
+    align-items: flex-end;
+    gap: 25px;
+    text-align: center;
+}
+.car-cant-items{
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-content-items p {
+    margin: 0;
+    font-size: 10px;
+    color: rgb(58, 53, 53);
+}
+.fa-whatsapp{
+    font-size: 23px;
+}
+
+.fa-lock{
+    font-size: 20px;
+}
+.fa-cart-shopping{
+    font-size: 19px;
 }

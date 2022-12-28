@@ -5,9 +5,14 @@
   display: grid;
   padding: 0 0 4em 0;
 }
+.Checkout-items{
+  border-top: 1px solid black;
+  border-bottom:  1px solid black;
+}
 .Checkout-item {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #eee;
   align-items: center;
   margin: 10px 0 0 0;
 }

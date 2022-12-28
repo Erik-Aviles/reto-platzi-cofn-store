@@ -7,6 +7,9 @@
 .Payment-back {
   margin: 10px 0 0 0;
 }
+.Payment-description{
+  margin-bottom: 30px;
+}
 .Payment-item {
   display: flex;
   justify-content: space-between;

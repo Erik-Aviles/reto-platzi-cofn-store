@@ -25,7 +25,8 @@ function Checkout() {
         ) : (
           <h3>Sin pedidos... </h3>
         )}
-        {cart.map((items, index) => (
+        <div className={cart.length ? "Checkout-items" : null}>
+          {cart.map((items, index) => (
           <div className="Checkout-item" key={items.title}>
             <div className="Checkout-element">
               <h4>{items.title}</h4>
@@ -36,6 +37,7 @@ function Checkout() {
             </button>
           </div>
         ))}
+        </div>
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">

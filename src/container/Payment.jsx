@@ -42,15 +42,17 @@ function Payment() {
   return (
     <div className="Payment">
       <div className="Payment-content">
-        <h3>Resumen del pedido: </h3>
-        {cart.map((item) => (
-          <div className="Payment-item" key={item.id}>
-            <div className="Payment-element">
-              <h4>{item.title}</h4>
-              <span>$ {item.price}</span>
+        <div className='Payment-description'> 
+          <h3>Resumen del pedido: </h3>
+          {cart.map((item) => (
+            <div className="Payment-item" key={item.id}>
+              <div className="Payment-element">
+                <h4>{item.title}</h4>
+                <span>$ {item.price}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="Payment-button">
           {cart.length > 0 && (
             <PayPalButton
@@ -65,6 +67,10 @@ function Payment() {
           )}
           {console.log(<PayPalButton />)}
         </div>
+      </div>
+      <div>
+        <h4>Informacion general </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatem quibusdam voluptas nostrum delectus nemo modi quod quis sit, nisi repellendus sapiente? Cupiditate non, odit dolores amet earum ipsam numquam.</p>
       </div>
     </div>
   );

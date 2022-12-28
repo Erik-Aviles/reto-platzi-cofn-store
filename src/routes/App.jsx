@@ -10,6 +10,8 @@ import NotFound from '../container/Notfound';
 import Layout from '../components/Layout';
 import useInicialState from '../hooks/useInicialState';
 import AppContext from '../context/AppContext';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function App() {
   const inicialState = useInicialState();
@@ -17,6 +19,7 @@ function App() {
   return (
     <AppContext.Provider value={inicialState}>
       <BrowserRouter>
+        <Header/>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -27,6 +30,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
+        <Footer/>
       </BrowserRouter>
     </AppContext.Provider>
   );
