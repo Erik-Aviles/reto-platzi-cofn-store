@@ -3,16 +3,32 @@
 /* body{
   background-color: #3C485E;
 } */
-
+*{
+  --color-primary: #774EE6;
+  --color-secundary: #ec14a4;
+  --text-color: #3c484e;
+  --color-layout: #E7E3E4;
+}
+html{
+  font-size: 62.5%;
+}
 
 /* Modo claro */
 body{
-  background-color: #E7E3E4;
-  margin: 0 40px ;
+  font-size: 1.4rem;
+  background-color: var(--color-layout);
+  margin: 0 10px ;
   padding: 0;
-  color: #3c484e;
+  color: var(--text-color);
   font-family: 'Open Sans', sans-serif;
 }
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
 
 
 /* body{

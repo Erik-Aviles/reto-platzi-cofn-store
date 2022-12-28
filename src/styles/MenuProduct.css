@@ -1,0 +1,30 @@
+
+.MenuProducts-container{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-bottom: 0.1rem solid rgb(207, 200, 200);
+}
+.MenuProducts-container ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-weight: 700;
+}
+
+
+.MenuProducts-container ul .li{
+    color: var(--text-color);
+    cursor: pointer;
+
+
+}
+
+.MenuProducts-container ul .li:hover{
+    cursor: pointer;
+    color: var(--color-secundary);
+    border-bottom: 3px solid var(--color-secundary)
+}

@@ -31,7 +31,7 @@ function Menu (){
   return (
     <nav className='nav'>
       <section>
-        <Link to='/'> <img src={logo} alt="" width={200} /></Link>
+        <Link to='/'> <img src={logo} alt="" width={150} /></Link>
       </section>
       <section className='nav-content-items'>
         <ul>
@@ -43,7 +43,7 @@ function Menu (){
                 <NavLink
                   end
                   style={({ isActive }) => ({
-                    color: isActive ? 'red' : 'blue'
+                    color: isActive ? 'var(--color-secundary)' :  'var(--color-primary)'
                 })}
                   to={route.to}
                 >

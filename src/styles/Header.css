@@ -1,9 +1,7 @@
 .Header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 7.5px;
-  margin-bottom: 7.5px;
-  border-bottom: 2px solid #774EE6;
 }
 .Header-checkout {
   display: flex;
@@ -17,7 +15,4 @@
   color: #33b13a;
   font-size: 14px;
   margin-left: 5px;
-}
-.fa-cart-shopping{
-  color: #774EE6;
 }
