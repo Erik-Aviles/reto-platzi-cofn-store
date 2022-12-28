@@ -15,7 +15,6 @@ function App() {
   const inicialState = useInicialState();
 
   return (
-
     <AppContext.Provider value={inicialState}>
       <BrowserRouter>
         <Layout>

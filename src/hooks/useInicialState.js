@@ -5,14 +5,14 @@ import inicialStates from '../const/inicialStates';
 const useInicialState = () => {
   const [state, setStates] = useState(inicialStates);
 
-  const addCart = payload => {
+  const addCart = (payload) => {
     setStates({
       ...state,
-      cart: [...state.cart, payload]
+      cart: [...state.cart, payload],
     });
   };
 
-/*   const removeFromCart = payload => {
+  /*   const removeFromCart = payload => {
     setStates({
       ...state,
       cart: state.cart.filter(items => items.id !== payload.id)
@@ -21,30 +21,32 @@ const useInicialState = () => {
   const removeFromCart = (payload, indexToRemove) => {
     setStates({
       ...state,
-      cart: state.cart.filter((_items, indexCurrent) => indexCurrent !== indexToRemove),
+      cart: state.cart.filter(
+        (_items, indexCurrent) => indexCurrent !== indexToRemove
+      ),
     });
   };
 
-  const addToBuyer = payload => {
+  const addToBuyer = (payload) => {
     setStates({
       ...state,
-      buyer: [...state.buyer, payload]
+      buyer: [...state.buyer, payload],
     });
-  }
-  const addNewOrder = payload => {
+  };
+  const addNewOrder = (payload) => {
     setStates({
       ...state,
-      orders: [...state.orders, payload]
+      orders: [...state.orders, payload],
     });
-  }
+  };
 
   return {
     state,
     addCart,
     removeFromCart,
     addToBuyer,
-    addNewOrder
-  }
-}
+    addNewOrder,
+  };
+};
 
 export default useInicialState;

@@ -1,9 +1,9 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin')
-const { DefinePlugin } = require("webpack");
-require("dotenv").config("./.env");
+const CopyPlugin = require('copy-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+require('dotenv').config('./.env');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,7 +13,7 @@ module.exports = {
     assetModuleFilename: 'assets/images/[hash][ext][query]',
     publicPath: '/',
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -61,15 +61,14 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src", "assets/images"),
-          to: "assets/images"
-        }
-      ]
+          from: path.resolve(__dirname, 'src', 'assets/images'),
+          to: 'assets/images',
+        },
+      ],
     }),
     new DefinePlugin({
-      "process.env": JSON.stringify(process.env),
-      }
-    ),
+      'process.env': JSON.stringify(process.env),
+    }),
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),
