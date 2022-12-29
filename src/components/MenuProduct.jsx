@@ -18,13 +18,19 @@ function MenuProduct () {
        ))}
       </ul>
     </div> 
-    <h5>
+    <div className='MenuProducts-location'>
         {
             location.pathname === '/' 
-            ? null 
-            : `Inicio ${ location.pathname}`
+            ?   null 
+            :   <>
+                Inicio /
+                
+                {location.pathname.replaceAll('/', ' ').toUpperCase().replaceAll('-', ' ')}
+                </> 
         }
-    </h5>
+    </div>
+        
+  
     </>
   )
 }
