@@ -1,0 +1,82 @@
+.Formulario-registerUser-main{
+   width: 500px;
+   height: 100vh;
+   margin: 50px auto;
+   padding: 20px 20px 40px;
+   border: 1px solid black;
+   border-radius: 8px;
+   position: static;
+
+}
+.form-container{
+    position: sticky;
+    top: 20px;
+
+}
+.form-title{
+    position: absolute;
+    padding: 0 5px;
+    top: -33px; 
+    background-color: var(  --color-layout);
+}
+.New-User_select-gerundio{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.radio-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.New-User_select{
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr 2fr;
+    gap: 10px;
+}
+.container{
+    position: static;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 10px;
+}
+.select-container{
+    display: flex;
+    align-items: center;
+}
+
+.form-items{
+    margin-bottom: 10px;
+
+}
+.form-items span{
+    font-size: 1rem;
+}
+.radio-container-radio{
+    width: 25px;
+    margin: 0;
+}
+.New-User_form-container{
+    margin: 10px;
+}
+.casilla{
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(144, 141, 141);
+    border-radius: 5px;
+}
+.container-button{
+    width: 100%;
+    position: absolute;
+    bottom: -60px; 
+    display: flex;
+    justify-content: center;
+}
+.container-button button{
+    width: 300px;
+    font-size: 2rem;
+    background-color: var(--color-primary);
+    border: 1px solid var(--text-color);
+    height: 40px;
+    border-radius: 8px;
+}

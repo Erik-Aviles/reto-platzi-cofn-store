@@ -21,6 +21,8 @@ import Automotriz from '../components/categories/Automotriz';
 import Juguetes from '../components/categories/Juguetes';
 import Moda from '../components/categories/Moda';
 import Marcketplace from '../components/categories/Marcketplace';
+import Login from '../container/Login';
+import RegisterUser from '../components/accounts/RegisterUser';
 
 function App() {
   const inicialState = useInicialState();
@@ -33,6 +35,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/login/register" element={<RegisterUser />} />
             <Route path="/checkout/information" element={<Information />} />
             <Route path="/checkout/payment" element={<Payment />} />
             <Route path="/checkout/success" element={<Success />} />
