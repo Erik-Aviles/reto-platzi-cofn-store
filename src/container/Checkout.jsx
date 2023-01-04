@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import handleSumTotal from '../utils/handleSumTotal';
@@ -18,7 +19,11 @@ function Checkout() {
   };
 
   return (
-    <div className="Checkout">
+    <>
+      <Helmet>
+        <title>Lista de pedidos - Erika Store</title>    
+      </Helmet>
+      <div className="Checkout">
       <div className="Checkout-content">
         {cart.length > 0 ? (
           <h3>RESUMEN DEL CARRITO </h3>
@@ -48,6 +53,7 @@ function Checkout() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

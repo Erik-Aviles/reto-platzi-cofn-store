@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet'
 import AppContext from '../context/AppContext';
 import Map from '../components/Map';
 // import usePosiStackAddress from '../hooks/usePosiStackAddress';
@@ -14,7 +15,11 @@ function Success() {
   const { data } = useAxiosFetch(address);
 
   return (
-    <div className="Success">
+    <>
+      <Helmet>
+        <title>Pago exitoso - Erika Store</title>
+      </Helmet>
+      <div className="Success">
       <div className="Success-content">
         <h2>{`${buyer[0].name}, Gracias por tu compra `}</h2>
         <span>
@@ -27,6 +32,7 @@ function Success() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
