@@ -3,18 +3,14 @@
 import React, { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../assets/images/icon-black.png';
+import SearchForm from './SearchForm';
 import AppContext from '../context/AppContext'
 import '../styles/Menu.css'
 
 const routes = [];
 
 routes.push({
-  to:'/buscar',
-  text: 'Buscar'
-})
-
-routes.push({
-  to: '/contactos',
+  to: '/contacto',
   text: 'Contactos'
 })
 routes.push({
@@ -27,12 +23,25 @@ routes.push({
 })
 
 function Menu (){
-  const {state: { cart } } = useContext(AppContext)
+  const {
+    state: { cart},
+    product,
+    search,
+    handleSearch,
+    form} = useContext(AppContext);
+
+
   return (
     <nav className='nav'>
-      <section>
-        <Link to='/'> <img src={logo} alt="" width={150} /></Link>
+      <section className='nav-logo'>
+        <Link to='/'> <img src={logo} alt="" width={200} /></Link>
       </section>
+      <SearchForm
+        products= {product}
+        form={form} 
+        search={search}
+        handleSearch={handleSearch}
+      />
       <section className='nav-content-items'>
         <ul>
           {
@@ -70,11 +79,6 @@ function Menu (){
                         <i className="fa-solid fa-lock" title='Candadito'/>
                         <p>{route.text}</p>
                     </span>
-                    : route.to === "/buscar" 
-                    ? <span>
-                        <i className="fa-solid fa-magnifying-glass" title='Icono de Lupa'/>
-                        <p>{route.text}</p>
-                        </span>
                     : <span>
                         <i className="fa-brands fa-whatsapp" title='Icono de telefono'/>
                         <p>{route.text}</p>

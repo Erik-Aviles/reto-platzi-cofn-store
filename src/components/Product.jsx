@@ -13,7 +13,7 @@ function Product({ product, handleAddToCart }) {
       </div>
       <button type="button" onClick={() => handleAddToCart(product)}>
         Comprar
-      </button>
+      </button> 
     </div>
   );
 }

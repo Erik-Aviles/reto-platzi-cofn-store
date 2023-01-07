@@ -1,15 +1,44 @@
 .nav{
+    background-color: var(--color-layout2);
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr;
     align-items: center;
+    gap: 40px;
+}
+.nav-logo{
+    margin-left: 10px;
+}
+.nav-buscar{
+    display: flex;    
+}
+.nav-buscar input{
+    border: 1px solid var(--color-primary);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0;
+    padding-left: 10px;
+    font-size: 1.8rem;
+    outline: none;
+}
+.nav-buscar button{
+    background: linear-gradient(to bottom, #9b84db 5%, #774EE6 100%);
+    border-top-right-radius: 8px;
+    width: auto;
+    height: 42px;
+    margin: 0;
+}
+.nav-buscar i{
+    margin: 10.5px;
 }
 
+
 .nav ul{
+    margin-right: 10px;
     height: 50px;
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
-    gap: 25px;
     text-align: center;
 }
 .car-cant-items{
@@ -27,7 +56,9 @@
 .fa-whatsapp{
     font-size: 20px;
 }
-
+.fa-magnifying-glass{
+    color: black;
+}
 .fa-lock, 
 .fa-magnifying-glass,
 .fa-cart-shopping{

@@ -23,6 +23,8 @@ import Moda from '../components/categories/Moda';
 import Marcketplace from '../components/categories/Marcketplace';
 import Login from '../container/Login';
 import RegisterUser from '../components/accounts/RegisterUser';
+import Contactos from '../container/Contactos';
+import SearchLayout from '../container/SearchLayout';
 
 function App() {
   const inicialState = useInicialState();
@@ -34,8 +36,10 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/search" element={<SearchLayout />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/contacto" element={<Contactos />} />
             <Route path="/login/register" element={<RegisterUser />} />
             <Route path="/checkout/information" element={<Information />} />
             <Route path="/checkout/payment" element={<Payment />} />

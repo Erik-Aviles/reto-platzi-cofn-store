@@ -1,23 +1,25 @@
 .Formulario-registerUser-main{
    width: 500px;
-   height: 100vh;
    margin: 50px auto;
    padding: 20px 20px 40px;
    border: 1px solid black;
    border-radius: 8px;
-   position: static;
+
 
 }
 .form-container{
-    position: sticky;
-    top: 20px;
-
+    position:relative; 
+    z-index:1;
 }
 .form-title{
-    position: absolute;
+    background-color: var(--color-layout1);
+    position:absolute; 
+    z-index:2;
     padding: 0 5px;
     top: -33px; 
-    background-color: var(  --color-layout);
+}
+.form-container h3{
+    margin: 0;
 }
 .New-User_select-gerundio{
     display: grid;
@@ -44,10 +46,12 @@
     align-items: center;
 }
 
-.form-items{
-    margin-bottom: 10px;
-
+.form-items, 
+.New-User_select, 
+.New-User_gener{
+    margin-top: 10px;
 }
+
 .form-items span{
     font-size: 1rem;
 }
@@ -71,12 +75,4 @@
     bottom: -60px; 
     display: flex;
     justify-content: center;
-}
-.container-button button{
-    width: 300px;
-    font-size: 2rem;
-    background-color: var(--color-primary);
-    border: 1px solid var(--text-color);
-    height: 40px;
-    border-radius: 8px;
 }

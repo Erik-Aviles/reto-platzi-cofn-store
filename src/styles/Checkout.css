@@ -21,7 +21,7 @@
   color: rgba(0,0,0,0.4);
   cursor: pointer;
 }
-.Checkout-item button {
+.Checkout-item figure {
   background-color: transparent;
   border: none;
   outline: none;

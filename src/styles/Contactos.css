@@ -1,0 +1,38 @@
+.Contacto{
+    height: auto;
+}
+.Contacto button{
+    width: 275.75px;
+}
+.Contacto-container{
+    height: auto;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr;
+    gap: 70px;
+}
+
+.contacto_asusto, .contacto_messages{
+    display: flex;
+    flex-direction: column;
+}
+.contacto_asusto :nth-child(4){
+    margin-bottom: 10px;
+}
+
+.contacto_asusto select{
+    width: 100%;
+    height: 30px;   
+    margin: 10px 0;
+    border: 1px solid rgb(205, 200, 200);
+    border-radius: 3px;
+}
+
+.contacto_messages textarea{
+    height: 100%;
+    border: 1px solid rgb(144, 141, 141);
+    border-radius: 5px;
+}
+.contacto_messages label{
+    margin-bottom: 10px;
+}

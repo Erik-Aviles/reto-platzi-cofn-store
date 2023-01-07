@@ -19,10 +19,10 @@ const NewUserAccount = ({addToBuyer}) => {
           <label htmlFor='email_create'>
             Direccion de email
           </label>
-          <input type='email' id='email_create' data-validate='isEmail' name='email_create' aria-required='true'/> 
+          <input type='email' data-validate='isEmail' name='email_create' aria-required='true'/> 
         </section>
         <div>
-          <button type='button' onClick={handleSutmit} >Crear una cuenta</button>
+          <button type='button' onClick={handleSutmit} >CREAR UNA CUENTA</button>
         </div>
       </form>
     </section>

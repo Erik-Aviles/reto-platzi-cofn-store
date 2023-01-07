@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom';
@@ -37,9 +38,9 @@ function Checkout() {
               <h4>{items.title}</h4>
               <span>${items.price}</span>
             </div>
-            <button type="button" onClick={handleRemove(items, index)}>
+            <figure type="button" onClick={handleRemove(items, index)}>
               <i className="fa-solid fa-trash" />
-            </button>
+            </figure>
           </div>
         ))}
         </div>

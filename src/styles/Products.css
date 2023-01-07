@@ -36,17 +36,7 @@
   border-radius: 5px 5px 0 0;
   object-fit: contain;
 }
-.Products-item button {
-  background: linear-gradient(to bottom, #9b84db 5%, #774EE6 100%);
-  width: 100%;
-  padding: 10px;
-  border-radius: 0px 0px 5px 5px;
-  border: 0px;
-  outline: 0;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 300;
-}
+
 .Products-item button:hover {
   background-color: rgba(39,44,49,0.06);
 }

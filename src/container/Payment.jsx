@@ -28,7 +28,6 @@ function Payment() {
   };
 
   const handlePaymentSuccess = (data) => {
-    console.log(data);
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
@@ -70,7 +69,6 @@ function Payment() {
                 onCancel={(data) => console.log(data)}
               />
             )}
-            {console.log(<PayPalButton />)}
           </div>
         </div>
         <div>

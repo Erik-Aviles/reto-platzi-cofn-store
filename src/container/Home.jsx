@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet' 
-import Products from '../components/Products';
+import ProductsDetails from '../components/ProductsDetails';
 import inicialStates from '../const/inicialStates';
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
       <meta property="og:type" content="article" />
       <meta property="fb:app_id" content="ID_APP_FACEBOOK" /> */}
     </Helmet>
-      <Products products={inicialStates.products} />;
+      <ProductsDetails products={inicialStates.products} />;
 
     </>
   )

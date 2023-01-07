@@ -1,8 +1,7 @@
 
 .Layout {
-  min-height: 75vh;
-  padding: 5px;
-  margin: 0 px;
+  min-height: 63vh;
+  margin: 0;
   display: grid;
   grid-template-columns: minmax(auto, 800px);
   grid-template-rows: auto;

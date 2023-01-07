@@ -38,7 +38,7 @@ function Information() {
       <div className="Information">
         <div className="Information-content">
           <div className="Information-head">
-            <h2>Informacion de contactos</h2>
+            <h3>INFORMACION DE CONTACTO</h3>
           </div>
           <div className="Information-form">
             <form ref={form}>
@@ -67,7 +67,7 @@ function Information() {
           </div>
         </div>
         <div className="Information-sidebar">
-          <h3>Pedido:</h3>
+          <h3>PEDIDO:</h3>
           {cart.map((items) => (
             <div className="Information-item" key={items.id}>
               <div className="Information-element">

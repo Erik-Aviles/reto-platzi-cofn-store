@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet';
-import Products from '../Products';
+import ProductsDetails from '../ProductsDetails';
 import inicialStates from '../../const/inicialCategories';
 
 // eslint-disable-next-line 
@@ -11,7 +11,7 @@ const Moda = () => {
         <title>Moda -Erika Store</title>
       </Helmet>
       <div>
-        <Products products={inicialStates.products} />;
+        <ProductsDetails products={inicialStates.products} />;
       </div>
     </>
   )

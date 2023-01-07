@@ -3,25 +3,21 @@ import Product from './Product';
 import AppContext from '../context/AppContext';
 import '../styles/Products.css';
 
-function Products() {
+function ProductsDetails() {
+  
   const {
-    state: { products },
     addCart,
+    filteredProduct
   } = useContext(AppContext);
-
+  
   const handleAddToCart = (product) => {
     addCart(product);
   };
 
-  // funcion que retorna otra funcion, donde se recibe esta funcion no es necesario generar otra funcion
-  /*   const handleAddToCart = product => () => {
-    addCart(product)
-  } */
-
   return (
     <div className="Products">
       <div className="Products-items">
-        {products.map((product) => (
+        {filteredProduct.map((product) => (
           <Product
             key={product.id}
             product={product}
@@ -33,4 +29,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default ProductsDetails;

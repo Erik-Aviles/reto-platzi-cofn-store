@@ -6,8 +6,9 @@
 *{
   --color-primary: #774EE6;
   --color-secundary: #ec14a4;
-  --text-color: #3c484e;
-  --color-layout: #E7E3E4;
+  --text-color: #848484;
+  --color-layout1: #f4f4f4;
+  --color-layout2: #E7E3E4;
 }
 html{
   font-size: 62.5%;
@@ -16,8 +17,8 @@ html{
 /* Modo claro */
 body{
   font-size: 1.4rem;
-  background-color: var(--color-layout);
-  margin: 0 10px ;
+  background-color: var(--color-layout1);
+  margin: 0;
   padding: 0;
   color: var(--text-color);
   font-family: 'Open Sans', sans-serif;
@@ -28,6 +29,45 @@ ul{
   list-style: none;
   text-decoration: none;
 }
+h3{
+  font-size: 1.8rem;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+
+input{
+  padding: 0;
+  width: 100%;
+  margin: 10px 0 0 0;
+  height: 40px;
+  border: 1px solid rgb(80, 77, 77);
+  border-radius: 8px;
+}
+
+label{
+  font-weight: 700;
+}
+
+button {
+  background: linear-gradient(to bottom, #9b84db 5%, #774EE6 100%);
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 0px 0px 5px 5px;
+  border: 0px;
+  outline: 0;
+
+  font-size: 1.8rem;
+}
+
+button:hover {
+  cursor: pointer;
+  border: 1px solid var(--color-secundary);
+  color:  var(--color-primary);
+  background: white;
+}
+
 
 
 

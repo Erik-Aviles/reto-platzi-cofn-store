@@ -68,24 +68,24 @@ const RegisterUser = () => {
             <section className='New-User_form-container'>
               <div className='form-items'>
                   <label htmlFor='customer_firstname'>Nombre <span style={{color: 'red'}}>*</span></label>
-                  <input className='casilla' type='name' id='customer_firstname' data-validate='isName' name='customer_firstname' aria-required='true'/> 
+                  <input type='name' id='customer_firstname' data-validate='isName' name='customer_firstname' aria-required='true'/> 
               </div>
               <div className='form-items'>
                   <label htmlFor='customer_lastname'>Apellidos <span style={{color: 'red'}}>*</span></label>
-                  <input className='casilla' type='text' id='customer_lastname' data-validate='isApellido' name='customer_lastname' aria-required='true'/> 
+                  <input type='text' id='customer_lastname' data-validate='isApellido' name='customer_lastname' aria-required='true'/> 
               </div>
               <div className='form-items'>
                   <label htmlFor='email'>Direccion de email <span style={{color: 'red'}}>*</span></label>
-                  <input className='casilla' type='email' id='email' data-validate='isEmail' name='email' aria-required='true'/> 
+                  <input type='email' id='email' data-validate='isEmail' name='email' aria-required='true'/> 
               </div>
               <div className='form-items'>
                   <label htmlFor='passwd'>Contraseña <sup style={{color: 'red'}}>*</sup></label>
-                  <input  className='casilla' type='password' id='passwd' data-validate='isPasswd' name='passwd' aria-required='true'/> 
+                  <input type='password' id='passwd' data-validate='isPasswd' name='passwd' aria-required='true'/> 
                   <span>(Mínimo 5 caracteres)</span>
               </div>
               <div className='form-items'>
                   <label htmlFor='conf_passwd'>Verificar Contraseña <sup style={{color: 'red'}}>*</sup></label>
-                  <input className='casilla' type='password' id='conf_passwd' data-validate='isPasswd' name='conf_passwd' aria-required='true'/> 
+                  <input type='password' id='conf_passwd' data-validate='isPasswd' name='conf_passwd' aria-required='true'/> 
                   <span>(Mínimo 5 caracteres)</span>
               </div>
               <div className='form-items'>
@@ -124,8 +124,8 @@ const RegisterUser = () => {
                 </div>
               </div>
               <div className='form-items' id='uniform-gender'>
-                <label>Genero</label>
-                <div >
+                <label >Genero</label>
+                <div className='New-User_gener'>
                   <select className='casilla' id='gender' name='gender'>
                     <option value=''>Select</option>  
                     {
@@ -139,7 +139,7 @@ const RegisterUser = () => {
             </section>
           </section>
           <section className='container-button'>
-            <button type='button' onClick={handleSutmit} >Crear una cuenta</button>
+            <button type='button' onClick={handleSutmit} >CREAR UNA CUENTA</button>
           </section>
         </form>
       </section>
