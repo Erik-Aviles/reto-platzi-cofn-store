@@ -9,7 +9,6 @@ function Header() {
     <div className="Header">
       <Menu />
       <MenuProduct />
-
     </div>
   );
 }

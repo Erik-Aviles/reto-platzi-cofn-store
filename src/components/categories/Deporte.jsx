@@ -5,13 +5,15 @@ import inicialStates from '../../const/inicialStates';
 
 // eslint-disable-next-line 
 const Deporte = () => {
+  const deporteProducts = inicialStates.categories.filter(items => items.name === 'deporte')
+  const deporteProducts2 = deporteProducts.flatMap(items => items.products)
   return (
     <>
       <Helmet>
         <title>Deporte -Erika Store</title>
       </Helmet>
       <div>
-        <ProductsDetails products={inicialStates.products} />;
+        <ProductsDetails products={deporteProducts2} />;
       </div>
     </>
   )

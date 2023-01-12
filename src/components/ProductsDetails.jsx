@@ -3,11 +3,11 @@ import Product from './Product';
 import AppContext from '../context/AppContext';
 import '../styles/Products.css';
 
-function ProductsDetails() {
+function ProductsDetails({products}) {
+
   
   const {
     addCart,
-    filteredProduct
   } = useContext(AppContext);
   
   const handleAddToCart = (product) => {
@@ -17,7 +17,7 @@ function ProductsDetails() {
   return (
     <div className="Products">
       <div className="Products-items">
-        {filteredProduct.map((product) => (
+        {products.map((product) => (
           <Product
             key={product.id}
             product={product}

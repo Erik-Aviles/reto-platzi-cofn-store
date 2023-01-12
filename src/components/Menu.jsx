@@ -25,11 +25,9 @@ routes.push({
 function Menu (){
   const {
     state: { cart},
-    product,
-    search,
     handleSearch,
-    form} = useContext(AppContext);
-
+    search,
+    messages, setMessages} = useContext(AppContext);
 
   return (
     <nav className='nav'>
@@ -37,9 +35,9 @@ function Menu (){
         <Link to='/'> <img src={logo} alt="" width={200} /></Link>
       </section>
       <SearchForm
-        products= {product}
-        form={form} 
         search={search}
+        messages={messages}
+        setMessages={setMessages}
         handleSearch={handleSearch}
       />
       <section className='nav-content-items'>

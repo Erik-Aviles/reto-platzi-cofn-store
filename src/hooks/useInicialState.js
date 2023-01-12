@@ -5,22 +5,23 @@ import inicialStates from '../const/inicialStates';
 const useInicialState = () => {
   const [state, setStates] = useState(inicialStates);
   const [search, setSearch] = useState(null);
+  const [messages, setMessages] = useState(false);
   const [loading, setLoading] = useState(false);
-
   let filteredProduct = [];
+
+  // const allProducts = state.categories.flatMap(items => items.products)
+  //   console.log(allProducts)
+
   
-  if (search  === null ) {
-    filteredProduct = state.products
-  } else {
-    const {title}= search;
-    filteredProduct = state.products.filter((product) => {
-        return product.title.toLowerCase().includes(title.toLowerCase())
-      })
+  
+  if (search) {
+   const {title} = search;
+    filteredProduct = state.categories.flatMap(items => items.products).filter((product) =>product.title.toLowerCase().includes(title.toLowerCase())
+      )
   }
 
   const handleSearch = (data) =>{
     setSearch(data)
-    console.log(data)
   }
   
   const removeFromCart = (payload, indexToRemove) => {
@@ -61,7 +62,10 @@ const useInicialState = () => {
     addNewOrder,
     handleSearch,
     search,
+    messages,
+    setMessages,
     loading,
+    setLoading
   };
 };
 

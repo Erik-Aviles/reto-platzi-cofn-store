@@ -5,13 +5,16 @@ import inicialStates from '../../const/inicialStates';
 
 // eslint-disable-next-line 
 const Hogar = () => {
-  return (
+  const hogarProducts = inicialStates.categories.filter(items => items.name === 'hogar')
+  const hogarProducts2 = hogarProducts.flatMap(items => items.products)
+
+    return (
     <>
       <Helmet>
         <title>Hogar -Erika Store</title>
       </Helmet>
       <div>
-        <ProductsDetails products={inicialStates.products} />;
+        <ProductsDetails products={hogarProducts2} />;
       </div>
     </>
   )

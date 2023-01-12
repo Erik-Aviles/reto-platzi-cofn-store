@@ -1,15 +1,15 @@
 /* eslint-disable */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const inicialForm = {
   title: ''
 }
 
-function SearchForm ({handleSearch}) {
+function SearchForm ({handleSearch, setMessages, search, }) {
   const [form, setForm] = useState(inicialForm);
   const navegate = useNavigate()
-
+  
   const handleChange = (event) => {
     setForm({
       ...form,
@@ -18,17 +18,16 @@ function SearchForm ({handleSearch}) {
   }
 
   const handleSubmit = (event)=>{
+    console.log('buscando')
     navegate('./search')
     event.preventDefault();
     
     if (!form.title) {
-     return;
+      return;
     }
     handleSearch(form);
     setForm(inicialForm);
-
   }
-
 
   return (
     <form 

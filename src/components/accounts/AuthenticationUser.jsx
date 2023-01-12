@@ -7,7 +7,10 @@ const AuthenticationUser = () => {
   const navegate = useNavigate()
   const form = useRef(null);
     const handleSutmit = () => {
-      navegate('/checkout/payment');
+  /* const formData = new FormData(form.current);
+      const user = Object.fromEntries(formData)
+      addToUser(user); */
+      navegate('/');
     }
 
   return (

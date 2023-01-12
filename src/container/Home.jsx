@@ -4,6 +4,9 @@ import ProductsDetails from '../components/ProductsDetails';
 import inicialStates from '../const/inicialStates';
 
 function Home() {
+
+const allProducts = inicialStates.categories.flatMap(items => items.products)
+
   return (
     <>
     <Helmet>
@@ -29,7 +32,7 @@ function Home() {
       <meta property="og:type" content="article" />
       <meta property="fb:app_id" content="ID_APP_FACEBOOK" /> */}
     </Helmet>
-      <ProductsDetails products={inicialStates.products} />;
+      <ProductsDetails products={allProducts} />;
 
     </>
   )
