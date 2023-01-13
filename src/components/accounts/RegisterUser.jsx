@@ -1,44 +1,74 @@
-/* eslint-disable no-plusplus */
+/* eslint-disable */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useRef } from 'react';
+import React, { useContext, useRef} from 'react';
 import { Helmet } from 'react-helmet' 
 import { useNavigate } from 'react-router-dom';
+import AppContext from '../../context/AppContext';
 import '../../styles/RegisterUser.css'
+import { ddDay, ddMes, ddData, ddGender} from '../../const/datosFormulario';
 
 // eslint-disable-next-line 
 const RegisterUser = () => {
-    const navegate = useNavigate()
-    const form = useRef(null);
-    const handleSutmit = () => {
-      /* const formData = new FormData(form.current);
-      const user = Object.fromEntries(formData)
-      addToUser(user); */
-      navegate(-1);
-    }
+  const navegate = useNavigate();
+  const {
+    addToUser,
+    isCorrect, 
+    SetIsCorrect
+  } = useContext(AppContext)
+  const form = useRef();
 
-    const ddDay = [];    
-    for(let i=1; i<32; i++){
-      const dataFecha=i;
-      ddDay.push(dataFecha);
-    } 
-    console.log(ddDay)
-
-    const ddData = [];    
-    for(let i=1990; i<2022; i++){
-      const dataFecha=i;
-      ddData.push(dataFecha);
-    } 
-    console.log(ddData)
-
-    const ddMes = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre' , 'Diciembre'];
-    console.log(ddMes)
-
-    const ddGender = ['Masculino', 'Femenino', 'Otro'];
-    console.log(ddGender)
-
+  const handleSutmit = () => {
+    const formData = new FormData(form.current);
+    const user = Object.fromEntries(formData)
+    const nameRef = form.current.customer_firstname
+    const apellidoRef = form.current.customer_lastname
+    const emailRef = form.current.email
+    const passRef = form.current.passwd
+    const congPassRef = form.current.conf_passwd
+    switch (true) {
+      case user.customer_firstname === '' :
+        nameRef.focus()
+        SetIsCorrect(true)
+        setTimeout(() => {
+          SetIsCorrect(false)
+        }, 2000);
+        break;
+      case user.customer_lastname === '' :
+        apellidoRef.focus()
+        SetIsCorrect(true)
+        setTimeout(() => {
+          SetIsCorrect(false)
+        }, 2000);
+        break;
+      case user.email === '' :
+        emailRef.focus()
+        SetIsCorrect(true)
+        setTimeout(() => {
+          SetIsCorrect(false)
+        }, 2000);
+        break;
+      case user.passwd === '' :
+        passRef.focus()
+        SetIsCorrect(true)
+        setTimeout(() => {
+          SetIsCorrect(false)
+        }, 2000);
+        break;
+      case user.conf_passwd === '':
+        congPassRef.focus()
+        SetIsCorrect(true)
+        setTimeout(() => {
+          SetIsCorrect(false)
+        }, 2000);
+      break;
     
-
-
+      default:
+        navegate(-1);
+        addToUser(user); 
+        break;
+      }
+    }
+   
   return (
     <>  
       <Helmet>
@@ -50,7 +80,9 @@ const RegisterUser = () => {
             <h3>SUS DATOS PERSONALES</h3>
           </section>
           <section className='container'>
-            <p style={{color: 'red'}}>* Campo requerido</p>
+            {isCorrect && 
+              <p style={{color: 'red'}}>* Campo requerido</p>
+            }
             <section className='New-User_select-gerundio'>
               <div className='radio-container'>
                 <label className='radio-container-label' htmlFor='id_gender1'>Sr.</label>

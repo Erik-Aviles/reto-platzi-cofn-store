@@ -29,7 +29,7 @@
 }
 
 .contacto_messages textarea{
-    height: 100%;
+    height: 60%;
     border: 1px solid rgb(144, 141, 141);
     border-radius: 5px;
 }

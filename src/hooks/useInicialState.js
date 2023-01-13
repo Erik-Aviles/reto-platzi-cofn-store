@@ -6,6 +6,7 @@ const useInicialState = () => {
   const [state, setStates] = useState(inicialStates);
   const [search, setSearch] = useState(null);
   const [messages, setMessages] = useState(false);
+  const [isCorrect, SetIsCorrect] = useState(false);
   const [loading, setLoading] = useState(false);
   let filteredProduct = [];
 
@@ -46,6 +47,18 @@ const useInicialState = () => {
       buyer: [...state.buyer, payload],
     });
   };
+  const addToUser = (payload) => {
+    setStates({
+      ...state,
+      user: [...state.user, payload],
+    });
+  };
+  const addToMessageUser = (payload) => {
+    setStates({
+      ...state,
+      messageUser: [...state.messageUser, payload],
+    });
+  };
   const addNewOrder = (payload) => {
     setStates({
       ...state,
@@ -59,13 +72,17 @@ const useInicialState = () => {
     filteredProduct,
     removeFromCart,
     addToBuyer,
+    addToMessageUser,
     addNewOrder,
     handleSearch,
+    addToUser,
     search,
     messages,
     setMessages,
     loading,
-    setLoading
+    setLoading,
+    isCorrect, 
+    SetIsCorrect
   };
 };
 

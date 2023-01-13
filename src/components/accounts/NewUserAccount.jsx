@@ -1,25 +1,40 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line 
 const NewUserAccount = ({addToBuyer}) => {
+  const [text, setText] = useState('')
   const navegate = useNavigate()
-  const form = useRef(null);
+  const inputForm = useRef();
 
+  const handleChange = (e) => {
+    setText(e.target.value)
+  }
   const handleSutmit = () => {
-    navegate('/login/register');
+    const input = inputForm.current
+    if (!text) {
+      input.focus()
+    }else{
+      console.log(text)
+      navegate('/login/register');
+    }
   }
   return (
     <section>
-      <form ref={form}>
+      <form >
         <h3>CREAR UNA CUENTA</h3>
         <section>
           <p>No tienes cuenta? Haz clic en este boton para crearte una nueva cuenta y guardar todas tur preferencias y poder ver el listado de tus pedidos. </p>
           <label htmlFor='email_create'>
             Direccion de email
           </label>
-          <input type='email' data-validate='isEmail' name='email_create' aria-required='true'/> 
+          <input 
+            ref={inputForm} 
+            type='email' 
+            value={text}
+            aria-required='true'
+            onChange={handleChange}/> 
         </section>
         <div>
           <button type='button' onClick={handleSutmit} >CREAR UNA CUENTA</button>

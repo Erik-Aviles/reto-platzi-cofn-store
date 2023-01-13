@@ -10,24 +10,56 @@ function Information() {
     addToBuyer,
   } = useContext(AppContext);
   const form = useRef(null);
+  
   const navegate = useNavigate();
-
+  
   const handleSutmit = () => {
     const formData = new FormData(form.current);
     const buyer = Object.fromEntries(formData);
-    /*     const buyer = {
-      'name': formData.get('name'),
-      'apellido': formData.get('apellido'),
-      'email': formData.get('email'),
-      'address': formData.get('address'),
-      'city': formData.get('city'),
-      'country': formData.get('country'),
-      'state': formData.get('state'),
-      'cp': formData.get('cp'),
-      'phone': formData.get('phone'),
-    } */
-    addToBuyer(buyer);
-    navegate('/checkout/payment');
+    const nameRef = form.current.name
+    const apellidoRef = form.current.apellido
+    const emailRef = form.current.email
+    const addressRef = form.current.address
+    const cityRef = form.current.city
+    const regionRef = form.current.region
+    const countryRef = form.current.country
+    const phoneRef = form.current.phone
+    const cpRef = form.current.cp
+    switch (true) {
+      case buyer.name === '':
+        nameRef.focus();
+        break;
+      case buyer.apellido === '':
+        apellidoRef.focus();
+        break;
+      case buyer.email === '':
+        emailRef.focus();
+        break;
+      case buyer.address === '':
+        addressRef.focus();
+        break;
+      case buyer.city === '':
+        cityRef.focus();
+        break;
+      case buyer.region === '':
+        regionRef.focus();
+        break;
+      case buyer.country === '':
+        countryRef.focus();
+        break;
+      case buyer.phone === '':
+        phoneRef.focus();
+        break;
+      case buyer.cp === '':
+        cpRef.focus();
+        break;
+    
+      default:   
+        addToBuyer(buyer);
+        navegate('/checkout/payment');
+        break;
+    }
+
   };
 
   return (
@@ -48,7 +80,7 @@ function Information() {
               <input type="text" placeholder="Direccion" name="address" />
               <input type="text" placeholder="Ciudad" name="city" />
               <input type="text" placeholder="Pais" name="country" />
-              <input type="text" placeholder="Region" name="state" />
+              <input type="text" placeholder="Region" name="region" />
               <input type="text" placeholder="Codigo postal" name="cp" />
               <input type="text" placeholder="Telefono" name="phone" />
             </form>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useContext } from 'react';
 import Product from './Product';
 import AppContext from '../context/AppContext';
@@ -17,9 +18,9 @@ function ProductsDetails({products}) {
   return (
     <div className="Products">
       <div className="Products-items">
-        {products.map((product) => (
+        {products.map((product, index) => (
           <Product
-            key={product.id}
+            key={index}
             product={product}
             handleAddToCart={handleAddToCart}
           />
